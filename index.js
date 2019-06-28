@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParse = require('body-parser')
+const cors = require('cors')
 
 const todoRouter = require('./routes')
 
