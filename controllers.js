@@ -40,3 +40,12 @@ exports.completeTodo = async (req, res) => {
         console.log(err)
     }
 }
+
+exports.deleteAll = async (req, res) => {
+    try {
+        await Todo.deleteMany({})
+        res.json('deleted all')
+    } catch (err) {
+        console.log(err)
+    }
+}
