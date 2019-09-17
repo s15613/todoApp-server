@@ -6,5 +6,6 @@ router.get('/', controllers.getTodos)
 router.get('/delete/all', controllers.deleteAll)
 router.post('/:todoId', controllers.deleteTodo)
 router.post('/:todoId/complete', controllers.completeTodo)
+router.post('/:todoId/edit', controllers.editTodo)
 
 module.exports = router

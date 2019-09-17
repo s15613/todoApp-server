@@ -41,6 +41,19 @@ exports.completeTodo = async (req, res) => {
     }
 }
 
+exports.editTodo = async (req, res) => {
+    const data = req.body
+    const _id =  req.params.todoId
+    console.log(data)
+    try {
+        const todo = await Todo.findByIdAndUpdate(_id, data, {new: true})
+        res.json(todo)
+        console.log(todo)
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 exports.deleteAll = async (req, res) => {
     try {
         await Todo.deleteMany({})
